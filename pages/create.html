@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>CREATE | Funkoshop</title>
+</head>
+
+<body>
+    <!--Inicio Header-->
+    <header>
+        <nav class="navbar">
+            <picture class="navbar__logo">
+                <a href="Index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li><a class="navbar__link" href="./pages/shop.html">Ver Tienda</a></li>
+                <li><a class="navbar__link" href="./pages/contacto.html">Admin</a></li>
+                <li><a class="navbar__link" href="./pages/login.html">salir</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section>
+
+        <form class="create-form">
+            <h2 class="form__title">CREAR NUEVO ITEM</h2>
+            <div class="category">
+                <label class="create-label" for="category">Categoria :</label>
+                <input class="create-input" type="text" name="category">
+
+                <label class="create-label" for="licence">Licencia :</label>
+                <input class="create-input" type="text" name="licence">
+            </div>
+            <label for="name">Nombre del producto</label>
+            <input type="text" name="name">
+            <textarea name="" id="" cols="30" rows="10" placeholder="descripcion del producto"></textarea>
+            <label for="sku">SKU</label>
+            <input type="text" name="sku">
+            <label for="price">Precio</label>
+            <input type="text" name="price">
+            <label for="stock">Stock</label>
+            <input type="text" name="stock">
+            <label for="desc">Descuento</label>
+            <input type="text" name="desc">
+            <label for="cuotas">Cuotas</label>
+            <input type="text" name="cuotas">
+            <label for="img">Imagenes</label>
+            <input type="file" name="img">
+            <div class="btn-container">
+                <button class="form-btn">Agregar Producto</button>
+                <button class="form-btn">Limpiar</button>
+            </div>
+
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="./pages/shop.html">SHOP</a></li>
+                    <li><a href="./pages/register.html">REGISTRARSE</a></li>
+                    <li><a href="./pages/login.html">LOGIN</a></li>
+                    <li><a href="./pages/contact.html">CONTACTO</a></li>
+                </ul>
+                <picture>
+                    <img src="./img/branding/isotype.svg" alt="Isotipo de la marca FunkoShop">
+                </picture>
+            </nav>
+        </section>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+</body>
+
+</html>
