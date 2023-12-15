@@ -389,13 +389,15 @@ footer {
 .cant-input {
   width: 8rem;
   height: 30px;
+  font-size: var(--font-medium);
+  text-align: center;
 }
 
-.cant-input::placeholder {
+/*.cant-input::placeholder {
   text-align: center;
   padding-top: 30px;
   font-size: var(--font-medium);
-}
+}*/
 
 .metodos-pago {
   text-decoration: underline !important;

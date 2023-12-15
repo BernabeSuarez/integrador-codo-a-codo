@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar">
             <picture class="navbar__logo">
-                <a href="Index.html">
+                <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca FunkoShop">
                 </a>
             </picture>
@@ -39,10 +39,10 @@
                 <p>Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
                 <h2>$ 1799,99</h2>
                 <div class="product_cant">
-                    <input type="text" placeholder="0" class="cant-input">
+                    <input type="text" placeholder="0" class="cant-input" id="quantity" readonly>
                     <div class="cant_buttons">
-                        <button class="cant-btn">+</button>
-                        <button class="cant-btn">-</button>
+                        <button class="cant-btn" id="add">+</button>
+                        <button class="cant-btn" id="subtract">-</button>
                     </div>
 
                     <button class="form-btn">Agregar al Carrito</button>
@@ -56,6 +56,59 @@
 
         </div>
 
+    </section>
+    <section>
+        <h2>PRODUCTOS RELACIONADOS</h2>
+        <ul>
+            <li>
+                <article>
+                    <a href="">
+                        <picture>
+                            <img src="../img/star-wars/trooper-1.webp"
+                                alt="Figura coleccionable Funko de un stormtrooper de la película Star Wars">
+                        </picture>
+                        <div>
+                            <p>STAR WARS</p>
+                            <h4>STORMTROPPER LIGHTSABER</h4>
+                            <p>$ 1799.99</p>
+                            <p>3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="">
+                        <picture>
+                            <img src="../img/pokemon/pidgeotto-1.webp"
+                                alt="Figura coleccionable Funko de un pidgeotto de la serie Pokémon">
+                        </picture>
+                        <div>
+                            <p>POKEMON</p>
+                            <h4>PIDGEOTTO</h4>
+                            <p>$ 1799.99</p>
+                            <p>3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="">
+                        <picture>
+                            <img src="../img/harry-potter/luna-1.webp"
+                                alt="Figura coleccionable Funko de Luna Lovegood de la película Harry Potter">
+                        </picture>
+                        <div>
+                            <p>HARRY POTTER</p>
+                            <h4>LUNA LOVEGOOD LION MASK</h4>
+                            <p>$ 1799.99</p>
+                            <p>3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
     </section>
     <footer>
         <div class="footerContainer">
@@ -76,6 +129,7 @@
             <p class="copy">All rights reserved 2023 - Funkoshop &copy;</p>
         </div>
     </footer>
+    <script src="../js/item.js"></script>
 </body>
 
 </html>
