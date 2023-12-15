@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
     <title>ITEM | Funkoshop</title>
 </head>
 
@@ -26,17 +27,35 @@
         </nav>
     </header>
     <section>
-        <picture><img src="../img/star-wars/baby-yoda-1.webp"
-                alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian"></picture>
-        <p>STAR WARS</p>
-        <h2>BABY YODA BLUEBALL</h2>
-        <p>Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
-        <h2>$ 1799,99</h2>
-        <input type="text" placeholder="0">
-        <button>+</button>
-        <button>-</button>
-        <button>Agregar al Carrito</button>
-        <p>Ver métodos de pago - 3 CUOTAS SIN INTERÉS</p>
+        <div class="product_container">
+            <div class="product_image">
+                <picture><img src="../img/star-wars/baby-yoda-1.webp"
+                        alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian"></picture>
+
+            </div>
+            <div class="product_detail">
+                <h3>STAR WARS</h3>
+                <h2>BABY YODA BLUEBALL</h2>
+                <p>Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
+                <h2>$ 1799,99</h2>
+                <div class="product_cant">
+                    <input type="text" placeholder="0" class="cant-input">
+                    <div class="cant_buttons">
+                        <button class="cant-btn">+</button>
+                        <button class="cant-btn">-</button>
+                    </div>
+
+                    <button class="form-btn">Agregar al Carrito</button>
+                </div>
+                <div class="pagos">
+                    <a href="#" class="metodos-pago">Ver métodos de pago</a>
+                    <p> - 3 CUOTAS SIN INTERÉS</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
     <footer>
         <div class="footerContainer">
