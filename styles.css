@@ -484,3 +484,44 @@ footer {
   font-size: var(--font-xsmall);
   font-weight: bold;
 }
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 3%;
+}
+
+.login_container {
+  width: 500px;
+  margin: auto;
+}
+
+.login_container a {
+  color: #1d84b5;
+  font-size: var(--font-xsmall);
+  font-weight: bold;
+  text-align: center;
+}
+.inputs_group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-input {
+  border: none;
+  border-bottom: 2px solid #ff3333;
+}
+
+.login_form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.btn-login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
