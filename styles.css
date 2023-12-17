@@ -492,8 +492,13 @@ footer {
   margin: 5% 3%;
 }
 
+.login_title {
+  font-size: var(--font-xlarge);
+  text-transform: uppercase;
+}
+
 .login_container {
-  width: 500px;
+  width: 800px;
   margin: auto;
 }
 
@@ -503,10 +508,39 @@ footer {
   font-weight: bold;
   text-align: center;
 }
+.login_container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login_container p {
+  font-size: var(--font-large);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
 .inputs_group {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
+}
+.inputs_group label {
+  width: 70%;
+  font-size: var(--font-medium);
+  font-weight: bold;
+}
+
+.inputs_group input {
+  width: 70%;
+}
+.inputs_group input::placeholder {
+  font-size: var(--font-xsmall);
+  color: #878e9e;
+}
+
+.inputs_group input:focus {
+  outline: none;
 }
 
 .login-input {
@@ -515,9 +549,10 @@ footer {
 }
 
 .login_form {
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   margin: auto;
 }
 
@@ -525,4 +560,10 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.btn-login button {
+  width: 10rem !important;
 }
