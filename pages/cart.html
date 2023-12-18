@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar">
             <picture class="navbar__logo">
-                <a href="Index.html">
+                <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca FunkoShop">
                 </a>
             </picture>
@@ -26,50 +26,128 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <h1>CARRITO DE COMPRAS</h1>
-        <h3>DETALLE DE PRODUCTO CANTIDAD TOTAL</h3>
-        <ul>
+    <section class="cart_container">
+        <h2 class="cart_title">CARRITO DE COMPRAS</h2>
+        <div class="cart_card_items">
+            <h3>DETALLE DE PRODUCTO</h3>
+            <h3>CANTIDAD</h3>
+            <h3>TOTAL</h3>
+            <h3></h3>
+        </div>
+
+        <ul class="cart_card_container">
             <li>
-                <article>
-                    <picture>
-                        <img src="../img/star-wars/baby-yoda-1.webp"
-                            alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian">
-                    </picture>
-                    <h3>BABY YODA BLUEBALL</h3>
-                    <p>STAR WARS</p>
-                    <br>
-                    <p>Precio: $ 1799,99</p>
+                <article class="cart_card">
+                    <div class="cart_card_prod">
+                        <picture class="cart_card_img">
+                            <img src="../img/star-wars/baby-yoda-1.webp"
+                                alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian">
+                        </picture>
+                        <div class="cart_card_detail">
+                            <h3 class="cart_card_title">BABY YODA BLUEBALL</h3>
+                            <p class="cart_card_category">STAR WARS</p>
+                            <br>
+                            <p>Precio: $ 1799,99</p>
+                        </div>
+                    </div>
+                    <div class="cart_card_cant">
+                        <div class="product_cant">
+                            <input type="text" placeholder="0" class="cant-input" id="quantity" readonly>
+                            <div class="cant_buttons">
+                                <button class="cant-btn" id="add">+</button>
+                                <button class="cant-btn" id="subtract">-</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <h3>$ 1799,99</h3>
+
+                    </div>
+                    <div>
+                        <a href="">X</a>
+                    </div>
+
                 </article>
-                <input type="number" value="2">
-                <h3>$ 3599,98</h3>
-                <a href="">X</a>
+
             </li>
             <li>
-                <article>
-                    <picture>
-                        <img src="../img/pokemon/pidgeotto-1.webp"
-                            alt="Figura coleccionable Funko de un pidgeotto de la serie Pokémon">
-                    </picture>
-                    <h3>PIDGEOTTO</h3>
-                    <p>POKEMON</p>
-                    <br>
-                    <p>Precio: $ 1799,99</p>
+                <article class="cart_card">
+                    <div class="cart_card_prod">
+                        <picture class="cart_card_img">
+                            <img src="../img/pokemon/pidgeotto-1.webp"
+                                alt="Figura coleccionable Funko de un pidgeotto de la serie Pokémon">
+                        </picture>
+                        <div class="cart_card_detail">
+                            <h3 class="cart_card_title">PIDGEOTTO</h3>
+                            <p class="cart_card_category">POKEMON</p>
+                            <br>
+                            <p>Precio: $ 1799,99</p>
+                        </div>
+                    </div>
+                    <div class="cart_card_cant">
+                        <div class="product_cant">
+                            <input type="text" placeholder="0" class="cant-input" id="quantity" readonly>
+                            <div class="cant_buttons">
+                                <button class="cant-btn" id="add">+</button>
+                                <button class="cant-btn" id="subtract">-</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <h3>$ 1799,99</h3>
+
+                    </div>
+                    <div>
+                        <a href="">X</a>
+                    </div>
+
                 </article>
-                <input type="number" value="1">
-                <h3>$ 1799,99</h3>
-                <a href="">X</a>
+
             </li>
         </ul>
+        <section class="resume_cart">
+            <h2 class="cart_title resume_title">RESUMEN</h2>
+            <div class="resume_cart_detail">
+                <table>
+                    <tr>
+                        <td>CANTIDAD DE ELEMENTOS</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>SUBTOTAL</td>
+                        <td>$ 5.399,97</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ENVIO
+                        </td>
+                        <td>
+                            $0,00
+                        </td>
+                    </tr>
+
+                </table>
+                <span></span>
+                <table>
+                    <tr>
+
+                        <td>
+                            TOTAL
+                        </td>
+                        <td>
+                            $ 5.399,97
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <input type="button" value="IR A PAGAR" class="resume_btn">
+        </section>
     </section>
-    <section>
-        <h1>RESUMEN</h1>
-        <p>CANTIDAD DE ELEMENTOS 3</p>
-        <p>SUBTOTAL $ 5.399.97</p>
-        <p>ENVIO $ 0,00</p>
-        <p>TOTAL $ 5.399.97</p>
-        <input type="button" value="IR A PAGAR">
-    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footerContainer">
