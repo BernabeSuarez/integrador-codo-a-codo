@@ -18,4 +18,4 @@ app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
-app.listen (process.env.PORT, () => console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`));

@@ -12,78 +12,85 @@
 <body>
     <%- include('partials/header') -%>
         <main>
-            <section>
-                <article></article>
-                    <h3>Nuevos Ingresos</h3>
-                    <p>Descubrí el próximo Funko Pop de tu colección</p>
-                    <a href="./shop">SHOP</a>
+            <section class="hero">
+                <article class="hero__content">
+                    <h3 class="hero__title">Nuevos Ingresos</h3>
+                    <p class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+                    <a href="./shop" class="hero__link">SHOP</a>
                 </article>
             </section>
-            <section>
-                <article>
-                    <h3>STAR WARS & THE MANDALORIAN</h3>
-                    <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
-                    <a href="./pages/shop.html">VER COLECCIÓN</a>
-                </article>
-                <picture>
-                    <img src="./img/star-wars/baby-yoda-1.webp"
-                        alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian">
-                </picture>
-            </section>
-            <section>
-                <article>
-                    <h3>POKEMON INDIGO</h3>
-                    <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
-                    <a href="./pages/shop.html">VER COLECCIÓN</a>
-                </article>
-                <picture>
-                    <img src="./img/pokemon/vulpix-1.webp"
-                        alt="Figura coleccionable Funko de Vulpix de la serie Pokémon">
-                </picture>
-            </section>
-            <section>
-                <article>
-                    <h3>HARRY POTTER</h3>
-                    <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
-                    <a href="./pages/shop.html">VER COLECCIÓN</a>
-                </article>
-                <picture>
-                    <img src="./img/harry-potter/snape-patronus-1.webp"
-                        alt="Figura coleccionable Funko del Patronus de Snape de la película Harry Potter">
-                </picture>
-            </section>
-            <section class="relac_prod glide">;
-                <h2>ÚLTIMOS LANZAMIENTOS</h2>
-                <div class="glide__track" data-glide-el="track">
-                    <div class="relac_prod_container glide__slides">
-                        <% products.forEach(product=>{%>
+            <div class="home_container">
+                <section class="home_card">
+                    <article class="home_card_text">
+                        <h3 class="home_card_title">STAR WARS & THE MANDALORIAN</h3>
+                        <p class="Home_card_desc">Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                        <span></span>
+                        <a href="./shop" class="home_card_link">VER COLECCIÓN</a>
+                    </article>
+                    <picture>
+                        <img src="./img/star-wars/baby-yoda-1.webp"
+                            alt="Figura coleccionable Funko de Grogu de la serie The Mandalorian">
+                    </picture>
+                </section>
+                <section class="home_card">
+                    <picture>
+                        <img src="./img/pokemon/vulpix-1.webp"
+                            alt="Figura coleccionable Funko de Vulpix de la serie Pokémon">
+                    </picture>
+                    <article class="home_card_text">
+                        <h3 class="home_card_title">POKEMON INDIGO</h3>
+                        <p class="Home_card_desc">Atrapa todos los que puedas y disfruta de una colección llena de amigos.
+                        </p>
+                        <span></span>
+                        <a href="/shop" class="home_card_link">VER COLECCIÓN</a>
+                    </article>
+    
+                </section>
+                <section class="home_card">
+                    <article class="home_card_text">
+                        <h3 class="home_card_title">HARRY POTTER</h3>
+                        <p class="home_card_desc">Revive los recuerdos de una saga llena de magia y encanto.</p>
+                        <span></span>
+                        <a href="/shop" class="home_card_link">VER COLECCIÓN</a>
+                    </article>
+                    <picture>
+                        <img src="./img/harry-potter/snape-patronus-1.webp"
+                            alt="Figura coleccionable Funko del Patronus de Snape de la película Harry Potter">
+                    </picture>
+                </section>
+                <section class="relac_prod glide">;
+                    <h2>ÚLTIMOS LANZAMIENTOS</h2>
+                    <div class="glide__track" data-glide-el="track">
+                        <div class="relac_prod_container glide__slides">
+                            <% products.forEach(product=>{%>
                             <article class="item_card glide__slide">
                                 <div class="new_prod">
                                     <h5>NUEVO</h5>
                                 </div>
                                 <a href="shop/item/<%= product.product_id %>">
                                     <picture class="card_img">
-                                        <img src="<%= product.img_front %>"
+                                        <img src="<%= product.image_front %>"
                                             alt="<%= product.product_description %>">
                                     </picture>
                                     <div>
-                                        <p class="card_category"><%= product.licence_name.toUpperCase() %></p>
+                                        <p class="card_category"><%= licences[product.licence_id-1].licence_name.toUpperCase() %></p>
                                         <h3 class="card_title"><%= product.product_name.toUpperCase() %></h3>
-                                        <p class="card_price">$ <%= product.product_price %></p>
+                                        <p class="card_price">$ <%= product.price %></p>
                                         <p class="card_pago">3 CUOTAS SIN INTERÉS</p>
                                     </div>
                                 </a>
                             </article>
-                        <% }) %>
+                            <% }) %>
+                        </div>
                     </div>
-                </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon
-                            icon="material-symbols:chevron-left"></iconify-icon></button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon
-                            icon="material-symbols:chevron-right"></iconify-icon></button>
-                </div>
-            </section>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon
+                                icon="material-symbols:chevron-left"></iconify-icon></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon
+                                icon="material-symbols:chevron-right"></iconify-icon></button>
+                    </div>
+                </section>
+            </div>
         </main>
         <%- include('partials/footer') -%>
             <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
