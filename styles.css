@@ -835,3 +835,86 @@ aside form {
   align-items: center;
   margin: 15px;
 }
+
+.admin_container {
+  padding: 5rem 16rem;
+}
+
+.admin_container i {
+  font-size: 2rem;
+}
+
+.admin_title_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.admin_title {
+  font-size: var(--font-xlarge);
+  text-transform: uppercase;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.search_input {
+  width: 45rem;
+  height: 3rem;
+  border-radius: 5px;
+  padding: 3px;
+  border: 2px solid var(--dark-500);
+}
+.add_prod {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+.add_text {
+  font-size: var(--font-large);
+}
+
+.cant_btn_red {
+  width: 30px;
+  height: 30px;
+  color: #fafafa;
+  font-size: var(--font-large);
+  background-color: #ff3333;
+  border: none;
+  border-radius: 5px;
+}
+
+.prod_table {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.table_titles {
+  font-size: var(--font-medium);
+  font-weight: bold;
+}
+
+.table_items {
+  font-size: var(--font-small);
+  font-weight: bolder;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.items_admin {
+  padding: 4%;
+}
+
+.edit_icon {
+  color: #1d84b5;
+  cursor: pointer;
+}
+.delete_icon {
+  color: #ff3333;
+  cursor: pointer;
+}
