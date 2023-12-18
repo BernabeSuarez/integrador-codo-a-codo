@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/slides.css">
+    <title>Shop | Funkoshop</title>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <section class="shop_container">
+            <aside>
+                <form method="get">
+                    <label for="search">BUSCAR</label>
+                    <input class="create-input" type="text" id="search" placeholder="Ítem o categoría">
+                    <label for="order">ORDENAR POR</label>
+                    <select class="create-input" id="order">
+                        <option value="larg_to_sma">Mayor a menor</option>
+                        <option value="sma_to_larg">Menor a mayor</option>
+                    </select>
+                    <label for="price">PRECIO</label>
+                    <div class="min_max">
+                        <label for="min">Min</label>
+                        <input class="min_max_input" type="number" id="min" name="min" placeholder="0">
+                        <label for="max">Max</label>
+                        <input class="min_max_input" type="number" id="max" name="max" placeholder="0">
+                    </div>
+                    <label for="filter">FILTRAR</label>
+                    <div class="check_container">
+                        <div>
+                            <input type="checkbox" value="new">
+                            <label for="scales">Nuevos</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="offers"><label for="scales">Ofertas</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="special"><label for="scales">Edicion Especial</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="favorites"><label for="scales">favoritos</label>
+                        </div>
+                    </div>
+                </form>
+            </aside>
+            <div class="shop_prod">
+                <section>
+                    <div class="shop_prod_container">
+                        <% products.forEach(product => { %>
+                            <article class="item_card grid-item">
+                                <div class="new_prod">
+                                    <h5>NUEVO</h5>
+                                </div>
+                                <a href="/shop/item/<%= product.product_id %>">
+                                    <picture class="card_img">
+                                        <img src="<%= product.img_front %>" alt="<%= product.product_description %>">
+                                    </picture>
+                                    <div>
+                                        <p class="card_category">
+                                            <%= product.licence_name.toUpperCase() %>
+                                        </p>
+                                        <h4 class="card_title">
+                                            <%= product.product_name.toUpperCase() %>
+                                        </h4>
+                                        <p class="card_price">$ <%= product.product_price %>
+                                        </p>
+                                        <p class="card_pago">3 CUOTAS SIN INTERÉS</p>
+                                    </div>
+                                </a>
+                            </article>
+                            <% }) %>
+                    </div>
+                </section>
+                <section class="pagination">
+                    <input type="button" value="<">
+                    <input type="button" value="1">
+                    <input type="button" value="2">
+                    <input type="button" value="...">
+                    <input type="button" value="9">
+                    <input type="button" value="10">
+                    <input type="button" value=">">
+                </section>
+            </div>
+        </section>
+        <%- include('partials/footer') -%>
+            <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+            <script src="./js/glide.js"></script>
+</body>
+
+</html>

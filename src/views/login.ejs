@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Login | Funkoshop</title>
+</head>
+
+<body>
+    <!--Inicio Header-->
+    <%- include('partials/header') -%>
+    <section class="login">
+        <div class="login_container">
+            <form class="login_form">
+                <h2 class="login_title">Ingresar a mi cuenta</h2>
+                <div class="inputs_group">
+                    <label for="email">Email :</label>
+                    <input class="login-input" type="text" name="email" placeholder="tuemail@example.com">
+                </div>
+                <div class="inputs_group">
+                    <label for="contraseña">Contraseña:</label>
+                    <input class="login-input" type="password" name="contraseña" placeholder="************">
+                </div>
+                <div class="btn-login">
+                    <button class="form-btn">Ingresar</button>
+                    <div>
+                        <input type="checkbox" name="recordar" id="">
+                        <label class="create-label" for="recordar">Recordarme</label>
+                    </div>
+                </div>
+                <a href="#">Olvide mi contraseña</a>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <%- include('partials/footer') -%>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/slides.css">
+    <title>
+        <%= item.product_name %> | Funkoshop
+    </title>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="items_container">
+            <section>
+                <div class="product_container">
+                    <div class="product_image">
+                        <picture><img src="<%= item.img_front %>" alt="<%= item.product_description %>"></picture>
+                    </div>
+                    <div class="product_detail">
+                        <h3>
+                            <%= item.licence_name.toUpperCase() %>
+                        </h3>
+                        <h2>
+                            <%= item.product_name.toUpperCase() %>
+                        </h2>
+                        <p>
+                            <%= item.product_description %>.
+                        </p>
+                        <h2>$ 1799,99</h2>
+                        <div class="product_cant">
+                            <input type="text" placeholder="0" class="cant-input" id="quantity" readonly>
+                            <div class="cant_buttons">
+                                <button class="cant-btn" id="add">+</button>
+                                <button class="cant-btn" id="subtract">-</button>
+                            </div>
+                            <button class="form-btn">Agregar al Carrito</button>
+                        </div>
+                        <div class="pagos">
+                            <a href="#" class="metodos-pago">Ver métodos de pago</a>
+                            <p> - 3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="relac_prod glide">;
+                <h2>PRODUCTOS RELACIONADOS</h2>
+                <div class="glide__track" data-glide-el="track">
+                    <div class="relac_prod_container glide__slides">
+                        <% products.forEach(product=>{
+                            if ((product.product_id != item.product_id) && (product.licence_name == item.licence_name)) { %>
+                            <article class="item_card glide__slide">
+                                <div class="new_prod">
+                                    <h5>NUEVO</h5>
+                                </div>
+                                <a href="<%= product.product_id %>">
+                                    <picture class="card_img">
+                                        <img src="<%= product.img_front %>"
+                                            alt="<%= product.product_description %>">
+                                    </picture>
+                                    <div>
+                                        <p class="card_category"><%= product.licence_name.toUpperCase() %></p>
+                                        <h3 class="card_title"><%= product.product_name.toUpperCase() %></h3>
+                                        <p class="card_price">$ <%= product.product_price %></p>
+                                        <p class="card_pago">3 CUOTAS SIN INTERÉS</p>
+                                    </div>
+                                </a>
+                            </article>
+                            <% } 
+                        }) %>
+                    </div>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon
+                            icon="material-symbols:chevron-left"></iconify-icon></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon
+                            icon="material-symbols:chevron-right"></iconify-icon></button>
+                </div>
+            </section>
+        </div>
+        <%- include('partials/footer') -%>
+            <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+            <script src="/js/glide.js"></script>
+</body>
+
+</html>
