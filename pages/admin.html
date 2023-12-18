@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles.css">
     <title>Admin</title>
 </head>
@@ -25,7 +26,43 @@
             </ul>
         </nav>
     </header>
-    <section>
+    <section class="admin_container">
+        <div class="search">
+            <label for="buscar"><i class="fa fa-search"></i></label>
+            <input type="text" class="search_input">
+        </div>
+        <div class="admin_title_container">
+            <h2 class="admin_title">Listado de productos</h2>
+            <div class="add_prod">
+                <h3 class="add_text">Agregar</h3>
+                <button class="cant_btn_red" id="add">+</button>
+            </div>
+        </div>
+        <table class="prod_table" cellspacing="20">
+            <tr>
+                <td class="table_titles">ID</td>
+                <td class="table_titles">Codigo</td>
+                <td class="table_titles">Nombre del producto</td>
+                <td class="table_titles">Categoria</td>
+                <td class="table_titles"></td>
+            </tr>
+            <tr class="items_admin">
+                <td class="table_items">1</td>
+                <td class="table_items">STW00000012</td>
+                <td class="table_items">BABY YODA</td>
+                <td class="table_items">Star Wars</td>
+                <td><i class="fa fa-pencil edit_icon" aria-hidden="true"></i></td>
+                <td><i class="fa fa-trash-o delete_icon" aria-hidden="true"></i></td>
+            </tr>
+            <tr class="items_admin">
+                <td class="table_items">1</td>
+                <td class="table_items">STW00000012</td>
+                <td class="table_items">BABY YODA</td>
+                <td class="table_items">Star Wars</td>
+                <td><i class="fa fa-pencil edit_icon" aria-hidden="true"></i></td>
+                <td><i class="fa fa-trash-o delete_icon" aria-hidden="true"></i></td>
+            </tr>
+        </table>
 
 
     </section>
