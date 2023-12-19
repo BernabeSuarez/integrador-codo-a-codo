@@ -13,7 +13,7 @@
     <%- include('partials/header') -%>
     <section class="login">
         <div class="login_container">
-            <form class="login_form">
+            <form class="login_form" action="/auth/login" method="post">
                 <h2 class="login_title">Ingresar a mi cuenta</h2>
                 <div class="inputs_group">
                     <label for="email">Email :</label>
@@ -21,16 +21,17 @@
                 </div>
                 <div class="inputs_group">
                     <label for="contraseña">Contraseña:</label>
-                    <input class="login-input" type="password" name="contraseña" placeholder="************">
+                    <input class="login-input" type="password" name="password" placeholder="************">
                 </div>
                 <div class="btn-login">
-                    <button class="form-btn">Ingresar</button>
+                    <button class="form-btn" type="submit">Ingresar</button>
                     <div>
                         <input type="checkbox" name="recordar" id="">
                         <label class="create-label" for="recordar">Recordarme</label>
                     </div>
                 </div>
                 <a href="#">Olvide mi contraseña</a>
+                <a href="/auth/register">¿No tenés cuenta? ¡Registrate!</a>
             </form>
         </div>
     </section>

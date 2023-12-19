@@ -1,7 +1,6 @@
 const { conn } = require('../config/conn');
 
 const getProducts = async (search, order, min, max) => {
-    console.log(process.env.HOST);
     let query = 'SELECT * FROM product';
     if (search || min || max) query += ' WHERE';
     if (search) query += ` product_name LIKE '%${search}%'`;
@@ -10,7 +9,6 @@ const getProducts = async (search, order, min, max) => {
     if (min && max) query += ' AND';
     if (max) query += ` price <= ${max}`;
     if (order) query += ` ORDER BY product_name ${order}`;
-    console.log(query);
     try {
         const [rows] = await conn.query(query+';');
         return rows;

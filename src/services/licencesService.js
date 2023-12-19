@@ -7,6 +7,7 @@ const getLicences = async () => {
 const getSameLicenceProducts = async (licence_id) => {
     return licences.getLicences(licence_id);
 };
+
 module.exports = {
     getLicences, getSameLicenceProducts
 }
