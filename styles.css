@@ -679,6 +679,21 @@ aside form {
   justify-content: end;
   gap: 1.5rem;
 }
+.pagination-btn {
+  width: 44px;
+  height: 44px;
+  margin: 0 4px;
+  font-size: var(--font-medium);
+  font-weight: bold;
+  background-color: #fafafa;
+  border: 2px solid rgb(151, 151, 151);
+  border-radius: 4px;
+}
+
+.pagination-btn:active {
+  border: 2px solid red;
+  color: #ff3333;
+}
 
 .check_container {
   display: flex;
