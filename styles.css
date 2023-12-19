@@ -501,6 +501,7 @@ footer {
 }
 
 .item_card {
+  max-width: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
