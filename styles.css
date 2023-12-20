@@ -556,11 +556,17 @@ footer {
   margin-bottom: 1.5rem;
 }
 .card_category {
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: var(--font-xsmall);
   color: #505666;
   margin-bottom: 1.5rem;
 }
-
+.card_title {
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: var(--font-medium);
+}
 .card_price {
   font-size: var(--font-medium);
   margin-bottom: 1.5rem;
