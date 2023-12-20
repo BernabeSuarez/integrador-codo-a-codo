@@ -12,10 +12,11 @@
                 <li><p class="navbar__link"><%= user.name %><br><br><a href="/auth/logout">Desloguearse</a></p></li>
             <% } else { %>
                 <li><a class="navbar__link" href="/auth/login">LOGIN</a></li>
+            <% } 
+            if (user.isAdmin){ %>
+                <li><a class="navbar__link" href="/admin">Admin</a></li>
             <% } %>
-            <li><a class="navbar__link with-icon" href="./cart.html"><img src="/img/icons/cart-icon.svg"></a>
-            </li>
-
+            <li><a class="navbar__link with-icon" href="./cart.html"><img src="/img/icons/cart-icon.svg"></a></li>
         </ul>
     </nav>
 </header>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Admin | Funkoshop</title>
+</head>
+
+<body>
+    <!--Inicio Header-->
+    <%- include('partials/header') -%>
+    <section>
+        <form method="post" action="<%= action %>" class="create-form">
+            <h2 class="form__title"><%= title.toUpperCase() %></h2>
+            <input type="hidden" name="product_id" value="<%= product.product_id %>">
+            <div class="category">
+                <div>
+                    <label class="create-label" for="category">Categoria : </label>
+                    <select class="create-input" name="category" id="category-select">
+                        <option value="1" disabled selected>Seleccione una categoria</option>
+                        <option value=1
+                        <% if(product.category_id == 1) {%> selected <% } %>>Funko</option>
+                        <option value=2
+                        <% if(product.category_id == 2) {%> selected <% } %>>Remera</option>
+                        <option value=3
+                        <% if(product.category_id == 3) {%> selected <% } %>>Llavero</option>
+                    </select>
+
+                </div>
+                <div>
+                    <label class="create-label" for="licence">Licencia : </label>
+                    <select class="create-input" name="licence" id="category-select">
+                        <option value="" disabled selected>Seleccione una licencia</option>
+                        <option value=1
+                        <% if(product.licence_id == 1) {%> selected <% } %>>Pokemon</option>
+                        <option value=2
+                        <% if(product.licence_id == 2) {%> selected <% } %>>Harry Potter</option>
+                        <option value=3
+                        <% if(product.licence_id == 3) {%> selected <% } %>>Star Wars</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="product_name" class="create-label">Nombre del producto : </label>
+                <input type="text" name="product_name" class="create_input_field" value="<%= product.product_name %>">
+            </div>
+            <textarea name="product_description" id="" cols="30" rows="10" placeholder="Descripcion del producto"><%= product.product_description %></textarea>
+            <div class="category">
+                <label class="create-label" for="sku">SKU: </label>
+                <input class="create_input_field" type="text" name="sku" value="<%= product.sku %>">
+                <label class="create-label" for="price">Precio: </label>
+                <input class="create_input_field number" type="text" name="price" value="<%= product.price %>">
+                <label class="create-label" for="stock">Stock: </label>
+                <input class="create_input_field number" type="text" name="stock" value="<%= product.stock %>">
+            </div>
+            <div class="category">
+                <div>
+                    <label class="create-label" for="desc">Descuento: </label>
+                    <input class="create_input_field" type="text" name="desc">
+                </div>
+                <div>
+                    <label class="create-label" for="cuotas">Cuotas:</label>
+                    <select class="create-input" name="cuotas" id="category-select">
+                        <option value="3-cuotas">3 Cuotas sin interes</option>
+                        <option value="6-cuotas">6 Cuotas sin interes</option>
+                        <option value="12-cuotas">12 Cuotas sin interes</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="create-label" for="img">Imagenes: </label>
+                <input type="file" name="img">
+            </div>
+            <div class="img_small_container">
+                <div class="prod_img">
+                    <img src="<%= product.image_front %>" alt="" width="80" name="image_front">
+                    <input type="hidden" name="image_front" value="<%= product.image_front %>">
+                    <p>Frente</p>
+                </div>
+                <div class="prod_img">
+                    <img src="<%= product.image_back %>" alt="" width="80" name="image_back">
+                    <input type="hidden" name="image_back" value="<%= product.image_back %>">
+                    <p>Dorso</p>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="form-btn" type="submit"><%= title %></button>
+            </div>
+            
+        </form>
+    </section>
+    <!-- Footer -->
+    <%- include('partials/footer') -%>
+</body>
+
+</html>

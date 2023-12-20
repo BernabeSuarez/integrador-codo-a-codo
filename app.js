@@ -1,6 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const session = require('express-session');
+const methodOverride = require('method-override');
+
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
@@ -10,15 +12,15 @@ dotenv.config();
 
 const app = express();
 
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
-
+app.use(express.static('public'));
 app.use(session({
     secret: 'funko',
     resave: false,
     saveUninitialized: false
 }));
 
-app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
