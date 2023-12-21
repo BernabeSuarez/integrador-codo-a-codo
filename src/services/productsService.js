@@ -20,6 +20,10 @@ const addProduct = async(params) => {
     products.addProduct(params);
 }
 
+const deleteProduct = async(product_id) => {
+    products.deleteProduct(product_id);
+} 
+
 module.exports = {
-    getProducts, getCertainProduct, getRelatedProducts, editProduct, addProduct
+    getProducts, getCertainProduct, getRelatedProducts, editProduct, addProduct, deleteProduct
 }

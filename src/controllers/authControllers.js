@@ -23,7 +23,6 @@ const authControllers = {
                 break;
             }
         }
-        console.log(req.session);
         res.render(path.resolve(__dirname, '../views/info'), { title: 'Error', message: 'El usuario o el email ingresados son incorrectos.', user: req.session });
     },
     registerGet: (req, res) => {
@@ -51,6 +50,7 @@ const authControllers = {
         if (req.session.name) {
             delete req.session.name;
             delete req.session.isAdmin;
+            delete req.session.cart;
             return res.render(path.resolve(__dirname, '../views/info'), { title: 'Éxito', message: 'Te has deslogueado satisfactoriamente.', user: req.session });
         } else
             return res.render(path.resolve(__dirname, '../views/info'), { title: 'Error', message: 'No has iniciado sesión.', user: req.session });

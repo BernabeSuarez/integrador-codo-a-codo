@@ -33,16 +33,16 @@
                     <div class="check_container">
                         <div>
                             <input type="checkbox" value="new">
-                            <label for="scales">Nuevos</label>
+                            <label for="scales"> Nuevos</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="offers"><label for="scales">Ofertas</label>
+                            <input type="checkbox" value="offers"><label for="scales"> Ofertas</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="special"><label for="scales">Edicion Especial</label>
+                            <input type="checkbox" value="special"><label for="scales"> Edicion Especial</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="favorites"><label for="scales">favoritos</label>
+                            <input type="checkbox" value="favorites"><label for="scales"> Favoritos</label>
                         </div>
                     </div>
                 </form>
@@ -57,7 +57,7 @@
                                 </div>
                                 <a href="/shop/item/<%= product.product_id %>">
                                     <picture class="card_img">
-                                        <img src="<%= product.image_front %>" alt="<%= product.product_description %>">
+                                        <img src="<%= product.image_front %>" alt="<%= product.product_description %>" onmouseover=this.src='<%= product.image_back %>' onmouseout=this.src='<%= product.image_front %>'>
                                     </picture>
                                     <div>
                                         <p class="card_category">
@@ -74,15 +74,6 @@
                             </article>
                         <% }) %>
                     </div>
-                </section>
-                <section class="pagination">
-                    <input type="button" value="<">
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="...">
-                    <input type="button" value="9">
-                    <input type="button" value="10">
-                    <input type="button" value=">">
                 </section>
             </div>
         </section>

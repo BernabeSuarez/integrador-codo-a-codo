@@ -14,7 +14,7 @@ const getCategories = async () => {
 const getCertainCategory = async (product_id) => {
     try {
         const [rows] = await conn.query(`SELECT category.* FROM category JOIN product ON category.category_id = product.category_id WHERE product.product_id = ${product_id};`);
-        return rows;
+        return rows[0];
     } catch (error) {
         throw error;
     } finally {

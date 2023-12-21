@@ -143,6 +143,25 @@ header {
   align-items: center;
   gap: var(--spacing-8);
 }
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
 
 .with-submenu:hover .submenu {
   display: block;
@@ -537,11 +556,17 @@ footer {
   margin-bottom: 1.5rem;
 }
 .card_category {
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: var(--font-xsmall);
   color: #505666;
   margin-bottom: 1.5rem;
 }
-
+.card_title {
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-size: var(--font-medium);
+}
 .card_price {
   font-size: var(--font-medium);
   margin-bottom: 1.5rem;
@@ -742,10 +767,11 @@ aside form {
 }
 
 .cart_card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 11px;
+  grid-row-gap: 16px;
   width: 100%;
   height: 180px;
   border: 4px solid #8d8c8c;
@@ -756,10 +782,11 @@ aside form {
 }
 
 .cart_card_items {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 11px;
+  grid-row-gap: 16px;
   width: 100%;
   height: 40px;
   border: 4px solid #8d8c8c;
@@ -772,6 +799,31 @@ aside form {
   font-size: var(--font-small);
 }
 
+.title-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.title-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 2 / 2 / 3;
+}
+.title-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 3 / 2 / 4;
+}
+.title-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 4 / 2 / 5;
+}
+
 .cart_card_img {
   width: 150px;
 }
@@ -781,6 +833,29 @@ aside form {
   flex-direction: row;
   align-items: center;
 }
+.cart_card_detail {
+  grid-area: 1 / 1 / 2 / 2;
+  /* width: 70%; */
+}
+.cart_card_price {
+  grid-area: 1 / 3 / 2 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart_card_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart_card_delete a {
+  border: 2px solid red;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+  color: red;
+}
 
 .cart_card_title {
   font-size: var(--font-large);
@@ -788,7 +863,17 @@ aside form {
 .cart_card_category {
   font-size: var(--font-xsmall);
 }
-
+.cart_card_cant {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  align-items: center;
+  /* width: 30%; */
+}
+.cart_card_delete {
+  grid-area: 1 / 4 / 2 / 5;
+  display: flex;
+  align-items: center;
+}
 .resume_cart {
   width: 400px;
   display: flex;
@@ -802,9 +887,11 @@ aside form {
 }
 .resume_cart_detail {
   width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 14px;
   border: 4px solid #8d8c8c;
   border-radius: 10px;
   background-color: #eeeff1;
@@ -818,6 +905,40 @@ aside form {
   background-color: #ff3333;
 }
 
+.resume_cart_title-1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.resume_cart_title-2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.resume_cart_title-3 {
+  grid-area: 3 / 1 / 4 / 2;
+  margin-bottom: 10px;
+}
+.resume_cart_title-4 {
+  grid-area: 4 / 1 / 5 / 2;
+  border-top: 2px solid var(--primary-solid);
+  padding-top: 10px;
+}
+.resume_cart_desc-1 {
+  grid-area: 1 / 2 / 2 / 3;
+  color: #505666;
+}
+.resume_cart_desc-2 {
+  grid-area: 2 / 2 / 3 / 3;
+  color: #505666;
+}
+.resume_cart_desc-3 {
+  grid-area: 3 / 2 / 4 / 3;
+  margin-bottom: 10px;
+  color: #505666;
+}
+.resume_cart_desc-4 {
+  grid-area: 4 / 2 / 5 / 3;
+  border-top: 2px solid var(--primary-solid);
+  padding-top: 10px;
+  color: #505666;
+}
 .resume_btn {
   background-color: var(--primary-900);
   color: whitesmoke;

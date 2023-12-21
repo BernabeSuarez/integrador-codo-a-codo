@@ -25,7 +25,7 @@ const getSameLicenceProducts = async (licence_id) => {
 const getCertainLicence = async (product_id) => {
     try {
         const [rows] = await conn.query(`SELECT licence.* FROM licence JOIN product ON licence.licence_id = product.licence_id WHERE product.product_id = ${product_id};`);
-        return rows;
+        return rows[0];
     } catch (error) {
         throw error;
     } finally {

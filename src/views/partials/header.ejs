@@ -9,14 +9,20 @@
             <li><a class="navbar__link" href="/shop">SHOP</a></li>
             <li><a class="navbar__link" href="/contact">CONTACTO</a></li>
             <% if (user.name) { %>
-                <li><p class="navbar__link"><%= user.name %><br><br><a href="/auth/logout">Desloguearse</a></p></li>
+                <li><a class="navbar__link" href="/"><%= user.name %></a></li>
+                <li><a class="navbar__link" href="/auth/logout">Logout</a></li>
             <% } else { %>
                 <li><a class="navbar__link" href="/auth/login">LOGIN</a></li>
             <% } 
             if (user.isAdmin){ %>
                 <li><a class="navbar__link" href="/admin">Admin</a></li>
             <% } %>
-            <li><a class="navbar__link with-icon" href="./cart.html"><img src="/img/icons/cart-icon.svg"></a></li>
+                <li class="cart-icon">
+                    <a class="navbar__link with-icon" href="/shop/cart"><img src="/img/icons/cart-icon.svg"></a>
+                    <% if (user.cart){ %>
+                            <span class="badge"><%= user.cart.length %></span>
+                    <% } %> 
+                </li>
         </ul>
     </nav>
 </header>

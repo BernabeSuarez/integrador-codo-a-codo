@@ -50,7 +50,7 @@
                         </td>
                         <td><a href="/admin/edit/<%= product.product_id %>"><i class="fa fa-pencil edit_icon"
                                     aria-hidden="true"></i></a></td>
-                        <td><i class="fa fa-trash-o delete_icon" aria-hidden="true" onclick="deleteProduct({hola: 'asd'})"></i></td>
+                        <td><i class="fa fa-trash-o delete_icon" aria-hidden="true" onclick="deleteProduct('<%= product.product_id %>')"></i></td>
                     </tr>
                     <% }) %>
             </table>
@@ -59,32 +59,6 @@
         <%- include('partials/footer') -%>
 </body>
 
-<script>
-    function deleteProduct(datos){
-        console.log(datos);
-        const response = fetch('/admin/delete', {
-            method: 'DELETE',
-            body: JSON.stringify(datos),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then(response => {
-            console.log(response);
-        });
-    }
-    /*document.getElementById("delete").addEventListener("click", async (e) => {
-        const saludo = {titulo: 'asd', numero: 0};
-        console.log(datos);
-        const response = await fetch('/admin/delete', {
-            method: 'DELETE',
-            body: JSON.stringify(datos),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then(response => {
-            console.log(response);
-        });
-    });*/
-</script>
+<script src="js/admin.js"></script>
 
 </html>

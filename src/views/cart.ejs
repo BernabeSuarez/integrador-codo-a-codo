@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Carrito | Funkoshop</title>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+    <section class="cart_container">
+        <h2 class="cart_title">CARRITO DE COMPRAS</h2>
+        <div class="cart_card_items">
+            <h3 class="title-1">DETALLE DE PRODUCTO</h3>
+            <h3 class="title-2">CANTIDAD</h3>
+            <h3 class="title-3">TOTAL</h3>
+            <h3 class="title-4"></h3>
+        </div>
+
+        <ul class="cart_card_container">
+            <% products.forEach( (product) => { %>
+                <li>
+                    <article class="cart_card">
+                        <div class="cart_card_prod">
+                            <picture class="cart_card_img">
+                                <img src="<%= product.image_front %>"
+                                    alt="<%= product.product_description %>">
+                            </picture>
+                            <div class="cart_card_detail">
+                                <h3 class="cart_card_title"><%= product.product_name.toUpperCase() %></h3>
+                                <p class="cart_card_category"><%= product.licence.licence_name.toUpperCase() %></p>
+                                <br>
+                                <p>Precio: $ <%= product.price %></p>
+                            </div>
+                        </div>
+                        <div class="cart_card_cant">
+                            <div class="product_cant">
+                                <input type="text" value="<%= product.quantity %>" class="cant-input" id="quantity" readonly>
+                                <div class="cant_buttons">
+                                    <button class="cant-btn" id="add">+</button>
+                                    <button class="cant-btn" id="subtract">-</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_card_price">
+                            <h3>$ <%= product.price * product.quantity %></h3>
+                        </div>
+                        <div class="cart_card_delete">
+                            <a href="#" id="product-<%= product.product_id %>" onclick="deleteFromCart('<%= product.product_id %>')">X</a>
+                        </div>
+                    </article>
+                </li>
+            <% }) %>
+        </ul>
+        <section class="resume_cart">
+            <h2 class="cart_title resume_title">RESUMEN</h2>
+            <div class="resume_cart_detail">
+                <h3 class="resume_cart_title-1">CANTIDAD DE ELEMENTOS</h3>
+                <h3 class="resume_cart_desc-1"><%= total.quantity %></h3>
+
+                <h3 class="resume_cart_title-2">SUBTOTAL</>
+                    <h3 class="resume_cart_desc-2">$ <%= total.price %></h3>
+
+                    <h3 class="resume_cart_title-3">
+                        ENVIO
+                    </h3>
+                    <h3 class="resume_cart_desc-3">
+                        $ 0.00
+                    </h3>
+
+                    <h3 class="resume_cart_title-4">
+                        TOTAL
+                    </h3>
+                    <h3 class="resume_cart_desc-4">
+                        $ <%= total.price %>
+                    </h3>
+
+
+
+            </div>
+            <form action="/shop/cart" method="POST">
+                <input type="submit" value="IR A PAGAR" class="resume_btn">
+            </form>
+                
+
+        </section>
+    </section>
+    <%- include('partials/footer') -%>
+</body>
+<script src="/js/cart.js"></script>
+
+</html>

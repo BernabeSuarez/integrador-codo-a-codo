@@ -2,7 +2,6 @@ const { conn } = require('../config/conn');
 
 const getProducts = async (params) => {
     let query = 'SELECT * FROM product';
-    console.log(params);
     if (params) {
         if (params.product_name || params.min || params.max || params.sku) query += ' WHERE';
         if (params.product_name) query += ` product_name LIKE '%${params.product_name}%'`;
@@ -26,7 +25,7 @@ const getProducts = async (params) => {
 const getCertainProduct = async (product_id) => {
     try {
         const [rows] = await conn.query('SELECT * FROM product WHERE product_id = ?;', (product_id));
-        return rows;
+        return rows[0];
     } catch (error) {
         throw error;
     } finally {
@@ -73,6 +72,17 @@ const addProduct = async (params) => {
     }
 }
 
+const deleteProduct = async (product_id) => {
+    try {
+        const [rows] = await conn.query(`DELETE FROM product WHERE product_id = ${product_id}`);
+        return rows;
+    } catch (error) {
+        throw error;
+    } finally {
+        conn.releaseConnection();
+    }
+}
+
 module.exports = {
-    getProducts, getCertainProduct, getRelatedProducts, editProduct, addProduct
+    getProducts, getCertainProduct, getRelatedProducts, editProduct, addProduct, deleteProduct
 };

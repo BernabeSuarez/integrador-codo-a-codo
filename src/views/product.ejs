@@ -13,7 +13,7 @@
     <!--Inicio Header-->
     <%- include('partials/header') -%>
     <section>
-        <form method="post" action="<%= action %>" class="create-form">
+        <form method="POST" action="<%= action %>" class="create-form" enctype="multipart/form-data">
             <h2 class="form__title"><%= title.toUpperCase() %></h2>
             <input type="hidden" name="product_id" value="<%= product.product_id %>">
             <div class="category">
@@ -71,17 +71,19 @@
                 </div>
             </div>
             <div>
-                <label class="create-label" for="img">Imagenes: </label>
-                <input type="file" name="img">
+                <label class="create-label" for="images">Subir imagen del frente: </label>
+                <input type="file" name="image-front-uploaded" accept="image/*"><br><br><br>
+                <label class="create-label" for="images">Subir imagen del dorso: </label>
+                <input type="file" name="image-back-uploaded" accept="image/*">
             </div>
             <div class="img_small_container">
                 <div class="prod_img">
-                    <img src="<%= product.image_front %>" alt="" width="80" name="image_front">
+                    <img src="<%= product.image_front %>" alt="" width="80">
                     <input type="hidden" name="image_front" value="<%= product.image_front %>">
                     <p>Frente</p>
                 </div>
                 <div class="prod_img">
-                    <img src="<%= product.image_back %>" alt="" width="80" name="image_back">
+                    <img src="<%= product.image_back %>" alt="" width="80">
                     <input type="hidden" name="image_back" value="<%= product.image_back %>">
                     <p>Dorso</p>
                 </div>

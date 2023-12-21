@@ -20,29 +20,32 @@
                         <picture><img src="<%= item.image_front %>" alt="<%= item.product_description %>"></picture>
                     </div>
                     <div class="product_detail <%= item.licence_id %>">
-                        <% licences.forEach(licence =>{
+                        <% licences.forEach(licence=>{
                             if (licence.licence_id == item.licence_id) {%>
-                                <h3><%= licence.licence_name.toUpperCase() %></h3> 
+                            <h3>
+                                <%= licence.licence_name.toUpperCase() %>
+                            </h3>
                             <% }}); %>
-                        <h2>
-                            <%= item.product_name.toUpperCase() %>
-                        </h2>
-                        <p>
-                            <%= item.product_description %>.
-                        </p>
-                        <h2>$ 1799,99</h2>
-                        <div class="product_cant">
-                            <input type="text" placeholder="0" class="cant-input" id="quantity" readonly>
-                            <div class="cant_buttons">
-                                <button class="cant-btn" id="add">+</button>
-                                <button class="cant-btn" id="subtract">-</button>
-                            </div>
-                            <button class="form-btn">Agregar al Carrito</button>
-                        </div>
-                        <div class="pagos">
-                            <a href="#" class="metodos-pago">Ver métodos de pago</a>
-                            <p> - 3 CUOTAS SIN INTERÉS</p>
-                        </div>
+                                <h2>
+                                    <%= item.product_name.toUpperCase() %>
+                                </h2>
+                                <p>
+                                    <%= item.product_description %>.
+                                </p>
+                                <h2>$ <%= item.price %></h2>
+                                <form class="product_cant" method="post" action="/shop/item/<%= item.product_id %>/add">
+                                    <input type="hidden" name="product_id" value="<%= item.product_id %>">
+                                    <input type="text" name="quantity" value="1" class="cant-input" id="quantity" readonly>
+                                    <div class="cant_buttons">
+                                        <button class="cant-btn" id="add" type="button">+</button>
+                                        <button class="cant-btn" id="subtract" type="button">-</button>
+                                    </div>
+                                    <button class="form-btn" type="submit">Agregar al Carrito</button>
+                                </form>
+                                <div class="pagos">
+                                    <a href="#" class="metodos-pago">Ver métodos de pago</a>
+                                    <p> - 3 CUOTAS SIN INTERÉS</p>
+                                </div>
                     </div>
                 </div>
             </section>
@@ -86,10 +89,10 @@
             </section>
         </div>
         <%- include('partials/footer') -%>
-            <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-            <script src="/js/glide.js"></script>
-            <script src="/js/item.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script src="/js/glide.js"></script>
+        <script src="/js/item.js"></script>
 </body>
 
 </html>
